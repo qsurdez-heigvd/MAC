@@ -1,1 +1,6 @@
-# MAC
+| Title                                                                         | Quick Description                                                               | Technology used | Grade |
+|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------|-----------------|-------|
+| [Lab 1 - Couchbase](https://github.com/qsurdez-heigvd/MAC/tree/main/lab1)     | Exploration of Couchbase with the mflix dataset to understand document database | Couchbase       | 5.7   |
+| [Lab 2 - Neao4J](https://github.com/qsurdez-heigvd/MAC/tree/main/lab2)        | Exploration of Neo4J to understand Graph database                               | Neo4J           | 5.8   |
+| [Lab 3 - ElasticSearch](https://github.com/qsurdez-heigvd/MAC/tree/main/lab3) | Exploration of ElasticSearch to understand steamming, search engines            | ElasticSearch   | 6.0   |
+| [Lab 4 - Spark](https://github.com/qsurdez-heigvd/MAC/tree/main/lab4)         | Exploration of Spark to understand how to handle big data on decentralized arch | Spark           | 5.4   |
