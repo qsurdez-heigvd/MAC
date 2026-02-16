@@ -1,0 +1,1313 @@
+q{
+  "paragraphs": [
+    {
+      "text": "%md\n\nA [Zeppelin](http://zeppelin.apache.org) notebook lets you write [Spark](https://spark.apache.org) programs interactively, similar to a REPL. When you write a notebook you write a series of cells. You type input into a cell, an interpreter processes your input and produces a result which is displayed in the same cell below your input.\n\nZeppelin provides several different interpreters, for different programming languages, such as Scala, Python and Bash. To write documentation there is a [Markdown](https://en.wikipedia.org/wiki/Markdown) interpreter. You specify for each cell the interpreter you want to use by beginning the input with a tag, such as `%spark` or `%md`.\n\nThe cell you are looking at right now is a Markdown cell. It starts with the tag `%md`.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:02.314",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eA \u003ca href\u003d\"http://zeppelin.apache.org\"\u003eZeppelin\u003c/a\u003e notebook lets you write \u003ca href\u003d\"https://spark.apache.org\"\u003eSpark\u003c/a\u003e programs interactively, similar to a REPL. When you write a notebook you write a series of cells. You type input into a cell, an interpreter processes your input and produces a result which is displayed in the same cell below your input.\u003c/p\u003e\n\u003cp\u003eZeppelin provides several different interpreters, for different programming languages, such as Scala, Python and Bash. To write documentation there is a \u003ca href\u003d\"https://en.wikipedia.org/wiki/Markdown\"\u003eMarkdown\u003c/a\u003e interpreter. You specify for each cell the interpreter you want to use by beginning the input with a tag, such as \u003ccode\u003e%spark\u003c/code\u003e or \u003ccode\u003e%md\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eThe cell you are looking at right now is a Markdown cell. It starts with the tag \u003ccode\u003e%md\u003c/code\u003e.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_716639350",
+      "id": "20180324-095623_812122633",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:02.346",
+      "dateFinished": "2026-01-15 21:13:04.636",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md In the following cell let\u0027s write some Scala code using the `%spark` interpreter:",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:04.647",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn the following cell let\u0026rsquo;s write some Scala code using the \u003ccode\u003e%spark\u003c/code\u003e interpreter:\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_2009071618",
+      "id": "20180324-111709_660064243",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:04.663",
+      "dateFinished": "2026-01-15 21:13:04.675",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nRange(0, 10)",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:04.763",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "val \u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.Range.Exclusive\u001b[0m \u003d Range 0 until 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_746007464",
+      "id": "20180324-111745_1553774808",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:04.776",
+      "dateFinished": "2026-01-15 21:13:15.739",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md It\u0027s good to have the documentation for Scala and Spark\u0027s Scala API handy. You may want to open in a separate browser tab:\n\n* Scaladocs for [Scala](http://www.scala-lang.org/api/current/#package)\n* Scaladocs for [Spark](http://spark.apache.org/docs/latest/api/scala/index.html#package)\n \n\u003e **Tips for using Scaladocs:**\n\n\u003e * Use the search bar in the upper-left-hand side to find a particular _type_. (For example, try \"RDD\" in the Spark Scaladocs.) \n\u003e * To search for a particular _method_, click the character under the search box for the method name\u0027s first letter, then scroll to it.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:15.791",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIt\u0026rsquo;s good to have the documentation for Scala and Spark\u0026rsquo;s Scala API handy. You may want to open in a separate browser tab:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eScaladocs for \u003ca href\u003d\"http://www.scala-lang.org/api/current/#package\"\u003eScala\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eScaladocs for \u003ca href\u003d\"http://spark.apache.org/docs/latest/api/scala/index.html#package\"\u003eSpark\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eTips for using Scaladocs:\u003c/strong\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cul\u003e\n\u003cli\u003eUse the search bar in the upper-left-hand side to find a particular \u003cem\u003etype\u003c/em\u003e. (For example, try \u0026ldquo;RDD\u0026rdquo; in the Spark Scaladocs.)\u003c/li\u003e\n\u003cli\u003eTo search for a particular \u003cem\u003emethod\u003c/em\u003e, click the character under the search box for the method name\u0026rsquo;s first letter, then scroll to it.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/blockquote\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1999351998",
+      "id": "20180325-113258_1205774110",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:15.804",
+      "dateFinished": "2026-01-15 21:13:15.818",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## Interpreters\n\nHere are the interpreters you are going to use mostly and their tags:\n\n|Interpreter                  |Tag     |\n|-----------------------------|--------|\n|Spark with Scala             |`%spark`|\n|Markdown                     |`%md`   |\n|Operating System shell (Bash)|`%sh`   |\n|HDFS file system             |`%file` |\n\nTo see all the available interpreters, click on the drop-down menu in the upper right corner and choose __Interpreter__.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:15.904",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eInterpreters\u003c/h2\u003e\n\u003cp\u003eHere are the interpreters you are going to use mostly and their tags:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\u003cth\u003eInterpreter\u003c/th\u003e\u003cth\u003eTag\u003c/th\u003e\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\u003ctd\u003eSpark with Scala\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e%spark\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003ctr\u003e\u003ctd\u003eMarkdown\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e%md\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003ctr\u003e\u003ctd\u003eOperating System shell (Bash)\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e%sh\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003ctr\u003e\u003ctd\u003eHDFS file system\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e%file\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eTo see all the available interpreters, click on the drop-down menu in the upper right corner and choose \u003cstrong\u003eInterpreter\u003c/strong\u003e.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1067985068",
+      "id": "20180324-100721_929608887",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:15.917",
+      "dateFinished": "2026-01-15 21:13:15.930",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## Autocompletion\n\nWhen you write Scala code, Zeppelin provides Auto-Complete: Depending on the OS type __Ctrl-Space__ or __Ctrl-__.\n\nTo see all the available keyboard shortcuts click the keyboard icon at the top.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:16.017",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eAutocompletion\u003c/h2\u003e\n\u003cp\u003eWhen you write Scala code, Zeppelin provides Auto-Complete: Depending on the OS type \u003cstrong\u003eCtrl-Space\u003c/strong\u003e or \u003cstrong\u003eCtrl-\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eTo see all the available keyboard shortcuts click the keyboard icon at the top.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_742792534",
+      "id": "20180324-152557_1769906055",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:16.029",
+      "dateFinished": "2026-01-15 21:13:16.038",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## Predefined SparkSession in the Spark interpreter\n\nTo write a Spark program you don\u0027t need to create a `SparkSession`, the interpreter has already done that for you. It is available in the variable `spark`.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:16.129",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003ePredefined SparkSession in the Spark interpreter\u003c/h2\u003e\n\u003cp\u003eTo write a Spark program you don\u0026rsquo;t need to create a \u003ccode\u003eSparkSession\u003c/code\u003e, the interpreter has already done that for you. It is available in the variable \u003ccode\u003espark\u003c/code\u003e.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1520480548",
+      "id": "20180324-111320_1756874200",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:16.141",
+      "dateFinished": "2026-01-15 21:13:16.147",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nspark.range(0, 10).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:16.241",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "val \u001b[1m\u001b[34mres2\u001b[0m: \u001b[1m\u001b[32mArray[Long]\u001b[0m \u003d Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1034637086",
+      "id": "20180324-112710_189907148",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:16.252",
+      "dateFinished": "2026-01-15 21:13:19.070",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\nIn case you need them there is also a predefined `SparkContext` and an `SQLContext`:\n\n|Class         |Predefined variable|\n|--------------|-------------------|\n|`SparkSession`|`spark`            |\n|`SparkContext`|`sc`               |\n|`SQLContext`  |`sqlContext`       |\n\n### Configuring the SparkSession\n\nIf you want to [configure the `SparkSession`](https://zeppelin.apache.org/docs/0.10.0/interpreter/spark.html) you have to do that before opening a notebook. Click on the drop-down menu in the upper right corner and choose __Interpreter__.\n\nLet\u0027s have a look at the current configuration:",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.156",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn case you need them there is also a predefined \u003ccode\u003eSparkContext\u003c/code\u003e and an \u003ccode\u003eSQLContext\u003c/code\u003e:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\u003cth\u003eClass\u003c/th\u003e\u003cth\u003ePredefined variable\u003c/th\u003e\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eSparkSession\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e\u003ccode\u003espark\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eSparkContext\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e\u003ccode\u003esc\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eSQLContext\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e\u003ccode\u003esqlContext\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eConfiguring the SparkSession\u003c/h3\u003e\n\u003cp\u003eIf you want to \u003ca href\u003d\"https://zeppelin.apache.org/docs/0.10.0/interpreter/spark.html\"\u003econfigure the \u003ccode\u003eSparkSession\u003c/code\u003e\u003c/a\u003e you have to do that before opening a notebook. Click on the drop-down menu in the upper right corner and choose \u003cstrong\u003eInterpreter\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eLet\u0026rsquo;s have a look at the current configuration:\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_2062516126",
+      "id": "20180324-113108_69157859",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.168",
+      "dateFinished": "2026-01-15 21:13:19.177",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nprintln(s\"\"\"\n    Running Scala version ${scala.util.Properties.versionNumberString}\n    Running Spark version ${spark.version}\n    Running Hadoop version ${org.apache.hadoop.util.VersionInfo.getVersion()}\n    appName: ${sc.appName}\n    master: ${sc.master}\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.268",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\n    Running Scala version 2.13.8\n    Running Spark version 3.5.7\n    Running Hadoop version 3.3.4\n    appName: spark-shared_process\n    master: local[*]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1412344991",
+      "id": "20180325-114322_782223265",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.279",
+      "dateFinished": "2026-01-15 21:13:19.451",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## Visualizing data\n\nZeppelin has a number of built-in features for visualizing results of Spark computations.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.479",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eVisualizing data\u003c/h2\u003e\n\u003cp\u003eZeppelin has a number of built-in features for visualizing results of Spark computations.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_422725783",
+      "id": "20180324-115202_719424609",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.492",
+      "dateFinished": "2026-01-15 21:13:19.498",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n### `%table` tag\n\nZeppelin has a built-in visualizer for tabular data. You simply let your program output the data as a table, line by line (the columns separated by tabs). Before the table you insert into the output the tag `%table` at the start of a line. This activates a special Zeppelin widget that lets you view the data as table, bar chart, pie chart, etc.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.592",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e\u003ccode\u003e%table\u003c/code\u003e tag\u003c/h3\u003e\n\u003cp\u003eZeppelin has a built-in visualizer for tabular data. You simply let your program output the data as a table, line by line (the columns separated by tabs). Before the table you insert into the output the tag \u003ccode\u003e%table\u003c/code\u003e at the start of a line. This activates a special Zeppelin widget that lets you view the data as table, bar chart, pie chart, etc.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1078167348",
+      "id": "20180324-115313_1748967248",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.604",
+      "dateFinished": "2026-01-15 21:13:19.610",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nprintln(\"%table\") // This tag tells Zeppelin to activate the visualization for the output\nprintln(\"x\\ty\")   // Table header with the column titles\nprintln(\"0\\t0\")   // Table data\nprintln(\"1\\t1\")   // Table data\nprintln(\"2\\t4\")   // Table data\nprintln(\"3\\t9\")   // Table data",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.704",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "x": "string",
+                      "y": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "x",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "y",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "x\ty\n0\t0\n1\t1\n2\t4\n3\t9\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_1518848828",
+      "id": "20180324-120011_2145115923",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.716",
+      "dateFinished": "2026-01-15 21:13:19.815",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nprintln(\"%table\\nx\\ty\")\n(1 to 340)\n    .map(i \u003d\u003e i.toDouble / 50)\n    .map(x \u003d\u003e (x, Math.sin(x)))\n    .foreach{case (x,y) \u003d\u003e println(s\"${x}\\t${y}\")}",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:19.816",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "x": "string",
+                      "y": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "x",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "y",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "x": "string",
+                      "y": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "x\ty\n0.02\t0.01999866669333308\n0.04\t0.03998933418663416\n0.06\t0.059964006479444595\n0.08\t0.0799146939691727\n0.1\t0.09983341664682815\n0.12\t0.11971220728891936\n0.14\t0.1395431146442365\n0.16\t0.15931820661424598\n0.18\t0.17902957342582418\n0.2\t0.19866933079506122\n0.22\t0.21822962308086932\n0.24\t0.23770262642713458\n0.26\t0.2570805518921551\n0.28\t0.27635564856411376\n0.3\t0.29552020666133955\n0.32\t0.31456656061611776\n0.34\t0.3334870921408144\n0.36\t0.35227423327508994\n0.38\t0.3709204694129827\n0.4\t0.3894183423086505\n0.42\t0.40776045305957015\n0.44\t0.4259394650659996\n0.46\t0.4439481069655198\n0.48\t0.4617791755414829\n0.5\t0.479425538604203\n0.52\t0.49688013784373675\n0.54\t0.5141359916531132\n0.56\t0.5311861979208834\n0.58\t0.5480239367918736\n0.6\t0.5646424733950354\n0.62\t0.5810351605373051\n0.64\t0.5971954413623921\n0.66\t0.6131168519734338\n0.68\t0.6287930240184686\n0.7\t0.644217687237691\n0.72\t0.6593846719714731\n0.74\t0.674287911628145\n0.76\t0.6889214451105513\n0.78\t0.7032794192004101\n0.8\t0.7173560908995228\n0.82\t0.7311458297268958\n0.84\t0.7446431199708593\n0.86\t0.757842562895277\n0.88\t0.7707388788989693\n0.9\t0.7833269096274834\n0.92\t0.795601620036366\n0.94\t0.8075581004051142\n0.96\t0.8191915683009983\n0.98\t0.8304973704919705\n1.0\t0.8414709848078965\n1.02\t0.852108021949363\n1.04\t0.8624042272433384\n1.06\t0.8723554823449863\n1.08\t0.8819578068849475\n1.1\t0.8912073600614354\n1.12\t0.9001004421765051\n1.14\t0.9086334961158832\n1.16\t0.9168031087717669\n1.18\t0.9246060124080203\n1.2\t0.9320390859672263\n1.22\t0.9390993563190676\n1.24\t0.945783999449539\n1.26\t0.9520903415905158\n1.28\t0.9580158602892249\n1.3\t0.963558185417193\n1.32\t0.9687151001182652\n1.34\t0.9734845416953194\n1.36\t0.9778646024353163\n1.38\t0.9818535303723597\n1.4\t0.9854497299884601\n1.42\t0.9886517628517197\n1.44\t0.9914583481916864\n1.46\t0.9938683634116449\n1.48\t0.99588084453764\n1.5\t0.9974949866040544\n1.52\t0.998710143975583\n1.54\t0.9995258306054791\n1.56\t0.9999417202299663\n1.58\t0.9999576464987401\n1.6\t0.9995736030415051\n1.62\t0.998789743470524\n1.64\t0.9976063813191737\n1.66\t0.9960239899165367\n1.68\t0.994043202198076\n1.7\t0.9916648104524686\n1.72\t0.9888897660047015\n1.74\t0.9857191788355535\n1.76\t0.9821543171376185\n1.78\t0.9781966068080447\n1.8\t0.9738476308781951\n1.82\t0.9691091288804563\n1.84\t0.9639829961524481\n1.86\t0.9584712830789142\n1.88\t0.9525761942715953\n1.9\t0.9463000876874145\n1.92\t0.9396454736853249\n1.94\t0.9326150140222005\n1.96\t0.9252115207881683\n1.98\t0.9174379552818098\n2.0\t0.9092974268256817\n2.02\t0.9007931915226273\n2.04\t0.8919286509533796\n2.06\t0.8827073508159741\n2.08\t0.8731329795075164\n2.1\t0.8632093666488737\n2.12\t0.8529404815528762\n2.14\t0.8423304316366457\n2.16\t0.8313834607786831\n2.18\t0.8201039476213742\n2.2\t0.8084964038195901\n2.22\t0.7965654722360865\n2.24\t0.7843159250844198\n2.26\t0.7717526620201259\n2.28\t0.758880708180922\n2.3\t0.7457052121767203\n2.32\t0.7322314440302514\n2.34\t0.7184647930691263\n2.36\t0.7044107657701763\n2.38\t0.6900749835569364\n2.4\t0.675463180551151\n2.42\t0.6605812012792007\n2.44\t0.6454349983343707\n2.46\t0.6300306299958922\n2.48\t0.6143742578057118\n2.5\t0.5984721441039564\n2.52\t0.5823306495240819\n2.54\t0.5659562304487028\n2.56\t0.5493554364271266\n2.58\t0.5325349075556212\n2.6\t0.5155013718214642\n2.62\t0.49826164241183857\n2.64\t0.48082261498864826\n2.66\t0.4631912649303452\n2.68\t0.44537464454187115\n2.7\t0.4273798802338298\n2.72\t0.4092141696720173\n2.74\t0.3908847788984522\n2.76\t0.3723990394250557\n2.78\t0.3537643453011431\n2.8\t0.3349881501559051\n2.82\t0.3160779642170538\n2.84\t0.2970413513068324\n2.86\t0.2778859258165868\n2.88\t0.25861934966111083\n2.9\t0.23924932921398243\n2.92\t0.21978361222511694\n2.94\t0.20022998472177053\n2.96\t0.18059626789423291\n2.98\t0.16089031496745576\n3.0\t0.1411200080598672\n3.02\t0.12129325503062975\n3.04\t0.10141798631660186\n3.06\t0.08150215176026912\n3.08\t0.06155371742991315\n3.1\t0.04158066243329049\n3.12\t0.02159097572609596\n3.14\t0.0015926529164868282\n3.16\t-0.01840630693305381\n3.18\t-0.03839790450523538\n3.2\t-0.058374143427580086\n3.22\t-0.0783270334708653\n3.24\t-0.09824859374510868\n3.26\t-0.11813085589181738\n3.28\t-0.13796586727122684\n3.3\t-0.1577456941432482\n3.32\t-0.17746242484086014\n3.34\t-0.19710817293466984\n3.36\t-0.21667508038737962\n3.38\t-0.236155320696897\n3.4\t-0.2555411020268312\n3.42\t-0.274824670323124\n3.44\t-0.2939983124155676\n3.46\t-0.3130543591029702\n3.48\t-0.3319851882207341\n3.5\t-0.35078322768961984\n3.52\t-0.3694409585444771\n3.54\t-0.3879509179417303\n3.56\t-0.4063057021444168\n3.58\t-0.4244979694835826\n3.6\t-0.44252044329485246\n3.62\t-0.4603659148289983\n3.64\t-0.47802724613534286\n3.66\t-0.4954973729168449\n3.68\t-0.5127693073557238\n3.7\t-0.5298361409084934\n3.72\t-0.5466910470692872\n3.74\t-0.56332728410037\n3.76\t-0.5797381977287428\n3.78\t-0.5959172238077639\n3.8\t-0.6118578909427189\n3.82\t-0.6275538230792933\n3.84\t-0.6429987420539088\n3.86\t-0.6581864701049049\n3.88\t-0.6731109323435617\n3.9\t-0.6877661591839738\n3.92\t-0.7021462887308054\n3.94\t-0.7162455691239705\n3.96\t-0.7300583608392995\n3.98\t-0.7435791389442746\n4.0\t-0.7568024953079282\n4.02\t-0.7697231407640238\n4.04\t-0.7823359072266528\n4.06\t-0.7946357497573968\n4.08\t-0.8066177485832405\n4.1\t-0.8182771110644103\n4.12\t-0.8296091736113709\n4.14\t-0.8406094035501945\n4.16\t-0.8512734009355745\n4.18\t-0.8615969003107405\n4.2\t-0.8715757724135882\n4.22\t-0.8812060258283253\n4.24\t-0.8904838085819885\n4.26\t-0.8994054096851777\n4.28\t-0.9079672606164054\n4.3\t-0.9161659367494549\n4.32\t-0.9239981587231879\n4.34\t-0.9314607937532425\n4.36\t-0.9385508568851079\n4.38\t-0.9452655121880633\n4.4\t-0.951602073889516\n4.42\t-0.9575580074492711\n4.44\t-0.9631309305733167\n4.46\t-0.9683186141667072\n4.48\t-0.9731189832251739\n4.5\t-0.977530117665097\n4.52\t-0.9815502530915153\n4.54\t-0.9851777815038595\n4.56\t-0.9884112519391305\n4.58\t-0.991249371052267\n4.6\t-0.9936910036334644\n4.62\t-0.9957351730622453\n4.64\t-0.9973810616980933\n4.66\t-0.9986280112074989\n4.68\t-0.999475522827284\n4.7\t-0.9999232575641008\n4.72\t-0.9999710363300245\n4.74\t-0.9996188400141854\n4.76\t-0.9988668094904142\n4.78\t-0.9977152455608933\n4.8\t-0.9961646088358407\n4.82\t-0.9942155195492713\n4.84\t-0.9918687573109126\n4.86\t-0.9891252607943698\n4.88\t-0.9859861273616704\n4.9\t-0.9824526126243325\n4.92\t-0.9785261299411385\n4.94\t-0.9742082498528091\n4.96\t-0.9695006994538088\n4.98\t-0.9644053617015305\n5.0\t-0.9589242746631385\n5.02\t-0.9530596307003677\n5.04\t-0.9468137755926089\n5.06\t-0.9401892075986287\n5.08\t-0.9331885764572976\n5.1\t-0.9258146823277325\n5.12\t-0.918070474669267\n5.14\t-0.9099590510617106\n5.16\t-0.9014836559663548\n5.18\t-0.8926476794282346\n5.2\t-0.8834546557201531\n5.22\t-0.8739082619290224\n5.24\t-0.8640123164850744\n5.26\t-0.8537707776345433\n5.28\t-0.8431877418564168\n5.3\t-0.8322674422239013\n5.32\t-0.821014246711247\n5.34\t-0.8094326564466194\n5.36\t-0.7975273039117042\n5.38\t-0.7853029510887806\n5.4\t-0.7727644875559871\n5.42\t-0.759916928531561\n5.44\t-0.7467654128678123\n5.46\t-0.7333152009956565\n5.48\t-0.7195716728205075\n5.5\t-0.7055403255703919\n5.52\t-0.6912267715971271\n5.54\t-0.6766367361314569\n5.56\t-0.6617760549930376\n5.58\t-0.6466506722561834\n5.6\t-0.6312666378723216\n5.62\t-0.6156301052500863\n5.64\t-0.5997473287940438\n5.66\t-0.5836246614030073\n5.68\t-0.5672685519289686\n5.7\t-0.5506855425976376\n5.72\t-0.5338822663916443\n5.74\t-0.5168654443974288\n5.76\t-0.49964188311690244\n5.78\t-0.48221847174493154\n5.8\t-0.46460217941375737\n5.82\t-0.44680005240543\n5.84\t-0.4288192113333959\n5.86\t-0.41066684829434086\n5.88\t-0.39235022399145386\n5.9\t-0.373876664830236\n5.92\t-0.35525355998804264\n5.94\t-0.3364883584585042\n5.96\t-0.31758856607203484\n5.98\t-0.2985617424935936\n6.0\t-0.27941549819892586\n6.02\t-0.2601574914304689\n6.04\t-0.2407954251341592\n6.06\t-0.22133704387835954\n6.08\t-0.2017901307561289\n6.1\t-0.18216250427209588\n6.12\t-0.1624620152151542\n6.14\t-0.14269654351825858\n6.16\t-0.12287399510655005\n6.18\t-0.10300229873509785\n6.2\t-0.0830894028174964\n6.22\t-0.06314327224661277\n6.24\t-0.04317188520872868\n6.26\t-0.02318322999237945\n6.28\t-0.0031853017931379904\n6.3\t0.016813900484349713\n6.32\t0.03680637742582692\n6.34\t0.05678413230707805\n6.36\t0.07673917429251892\n6.38\t0.09666352163141724\n6.4\t0.11654920485049364\n6.42\t0.13638826994159764\n6.44\t0.1561727815432119\n6.46\t0.175894826114484\n6.48\t0.19554651510054424\n6.5\t0.21511998808781552\n6.52\t0.23460741594807993\n6.54\t0.2540010039700231\n6.56\t0.27329299497701237\n6.58\t0.2924756724298697\n6.6\t0.31154136351337786\n6.62\t0.3304824422053109\n6.64\t0.34929133232673487\n6.66\t0.36796051057238466\n6.68\t0.38648250951987934\n6.7\t0.4048499206165983\n6.72\t0.42305539714299684\n6.74\t0.44109165715120235\n6.76\t0.4589514863776903\n6.78\t0.4766277411288995\n6.8\t0.49411335113860816\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589010_2011538677",
+      "id": "20180324-120140_1957241826",
+      "dateCreated": "2025-01-09 14:06:29.010",
+      "dateStarted": "2026-01-15 21:13:19.917",
+      "dateFinished": "2026-01-15 21:13:20.197",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n### Visualizing Spark DataFrames\n\nZeppelin is able to visualize DataFrames directly. Zeppelin injects a `ZeppelinContext` object named `z` into the Spark interpreter session. Call `z.show(myDataFrame)` on your DataFrame:",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:20.241",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eVisualizing Spark DataFrames\u003c/h3\u003e\n\u003cp\u003eZeppelin is able to visualize DataFrames directly. Zeppelin injects a \u003ccode\u003eZeppelinContext\u003c/code\u003e object named \u003ccode\u003ez\u003c/code\u003e into the Spark interpreter session. Call \u003ccode\u003ez.show(myDataFrame)\u003c/code\u003e on your DataFrame:\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1827120530",
+      "id": "20180324-120548_968111578",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:20.257",
+      "dateFinished": "2026-01-15 21:13:20.264",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval myDataFrame \u003d spark.range(0, 10).map(x \u003d\u003e (x, x*x)).toDF(\"x\", \"square\")\nz.show(myDataFrame)",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:20.357",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "x": "string",
+                      "square": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "x",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "square",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "x\tsquare\n0\t0\n1\t1\n2\t4\n3\t9\n4\t16\n5\t25\n6\t36\n7\t49\n8\t64\n9\t81\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "val \u001b[1m\u001b[34mmyDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [x: bigint, square: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d1"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d2"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d3"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1084406042",
+      "id": "20180324-140621_1450149590",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:20.372",
+      "dateFinished": "2026-01-15 21:13:21.310",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md ## Loading data\n\nFor downloading data that is not too big you can use the `%shell` interpreter. It gives you a Bash shell on the Operating System Zeppeling is running on (most probably Linux) and you can use a regular command-line tool for downloading.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:21.373",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eLoading data\u003c/h2\u003e\n\u003cp\u003eFor downloading data that is not too big you can use the \u003ccode\u003e%shell\u003c/code\u003e interpreter. It gives you a Bash shell on the Operating System Zeppeling is running on (most probably Linux) and you can use a regular command-line tool for downloading.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_390386375",
+      "id": "20180324-141053_609352511",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:21.389",
+      "dateFinished": "2026-01-15 21:13:21.395",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\necho \"Hello, World! I am a Bash script. The current directory is $(pwd) and it contains these files:\"\nls",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:21.489",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Hello, World! I am a Bash script. The current directory is /opt/zeppelin and it contains these files:\nbin\nconf\ninterpreter\nk8s\nlib\nLICENSE\nlicenses\nlocal-repo\nlogs\nnotebook\nNOTICE\nplugins\nREADME.md\nrun\nscripts\nwebapps\nzeppelin-web-0.12.0.war\nzeppelin-web-angular-0.12.0.war\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_177800664",
+      "id": "20180324-154032_1109696174",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:21.504",
+      "dateFinished": "2026-01-15 21:13:23.480",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md You can use the `curl` tool to download data (works on Linux and macOS). In many Zeppelin deployments there is a `/data` directory for storing data. As an example we are going to download a test dataset that contains the Bible and the works of Shakespeare, with all punctutation removed.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:23.508",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eYou can use the \u003ccode\u003ecurl\u003c/code\u003e tool to download data (works on Linux and macOS). In many Zeppelin deployments there is a \u003ccode\u003e/data\u003c/code\u003e directory for storing data. As an example we are going to download a test dataset that contains the Bible and the works of Shakespeare, with all punctutation removed.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1544246718",
+      "id": "20180324-154147_21115784",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:23.521",
+      "dateFinished": "2026-01-15 21:13:23.527",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\ncd /repo/data \u0026\u0026 curl --silent -O https://derlin.github.io/workshop-data-sciences/resources/bible_shakes.nopunc.gz",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:23.620",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1942658699",
+      "id": "20180324-154333_419276915",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:23.633",
+      "dateFinished": "2026-01-15 21:13:48.587",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md In this case the data is compressed and we need to uncompress it.",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:48.678",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn this case the data is compressed and we need to uncompress it.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1994846460",
+      "id": "20180324-154855_990169448",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:48.690",
+      "dateFinished": "2026-01-15 21:13:48.695",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\ncd /repo/data \u0026\u0026 gunzip bible_shakes.nopunc",
+      "user": "anonymous",
+      "dateUpdated": "2026-01-15 21:13:48.790",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "gzip: bible_shakes.nopunc: unknown suffix -- ignored\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 2"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_496154902",
+      "id": "20180324-154755_214006328",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2026-01-15 21:13:48.804",
+      "dateFinished": "2026-01-15 21:13:48.842",
+      "status": "ERROR"
+    },
+    {
+      "text": "%spark\nval bible_shakes \u003d sc.textFile(\"/repo/data/bible_shakes.nopunc\")\n\nbible_shakes.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2025-12-10 19:26:06.973",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "holy bible authorized king james version textfile 890904\nin the beginning god created the heaven and the earth\nand the earth was without form and void and darkness was upon the face of the deep and the spirit of god moved upon the face of the waters\nand god said let there be light and there was light\nand god saw the light that it was good and god divided the light from the darkness\nand god called the light day and the darkness he called night and the evening and the morning were the first day\nand god said let there be a firmament in the midst of the waters and let it divide the waters from the waters\nand god made the firmament and divided the waters which were under the firmament from the waters which were above the firmament and it was so\nand god called the firmament heaven and the evening and the morning were the second day\nand god said let the waters under the heaven be gathered together unto one place and let the dry land appear and it was so\nval \u001b[1m\u001b[34mbible_shakes\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d /repo/data/bible_shakes.nopunc MapPartitionsRDD[13] at textFile at \u003cconsole\u003e:2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://56ac3a880935:4040/jobs/job?id\u003d4"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1736431589011_1358428579",
+      "id": "20180324-154842_909440981",
+      "dateCreated": "2025-01-09 14:06:29.011",
+      "dateStarted": "2025-12-10 19:26:06.976",
+      "dateFinished": "2025-12-10 19:26:07.386",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-12-10 19:26:41.286",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1765393853662_1107336872",
+      "id": "paragraph_1765393853662_1107336872",
+      "dateCreated": "2025-12-10 19:10:53.662",
+      "dateStarted": "2025-12-10 19:26:41.290",
+      "dateFinished": "2025-12-10 19:26:41.299",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-12-10 19:26:41.290",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1765394801290_1225495970",
+      "id": "paragraph_1765394801290_1225495970",
+      "dateCreated": "2025-12-10 19:26:41.290",
+      "status": "READY"
+    }
+  ],
+  "name": "getting_started",
+  "id": "2KJM954UX",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": true
+  }
+}

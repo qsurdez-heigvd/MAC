@@ -1,0 +1,139 @@
+= Labo 1 - Couchbase
+Nastaran FATEMI <nastaran.fatemi@heig-vd.ch>; Christopher MEIER <christopher.meier@heig-vd.ch>
+:revdate: 17 septembre 2025
+:lang: fr
+:toc: auto
+:toc-title: Table des matières
+:course: Méthodes d’Accès aux Données (MAC)
+:xrefstyle: short
+
+== Introduction
+
+=== Objectif
+
+L'objectif de ce laboratoire est d'exercer Couchbase et son langage de requête N1QL.
+
+=== Organisation
+
+Ce laboratoire est à effectuer par groupe de 2 étudiants. Tout plagiat sera sanctionné par la note de 1.
+
+Ce laboratoire est à rendre à la https://classroom.github.com/a/H3IEA1dC[date indiquée sur Github Classroom] avec un commit sur Github Classroom.
+
+=== Mise en place
+
+Le code source du labo vous est fourni sur Github Classroom. Celui-ci contient :
+
+* Un fichier `pom.xml` qui configure les dépendances du projet Maven.
+* Un fichier `Main.java` qui se connecte à la base de donnée Couchbase et exécute les requêtes de `Requests.java`.
+* Un fichier `QueryOutputFormatTest` qui permet de vérifier que vous avez le bon format d'output pour les requêtes. (Lancer les tests avant le rendu pour simplifier les tests automatiques de la correction)
+
+Ainsi que 2 fichiers à compléter :
+
+* Un fichier `Requests.java`.
+* Un fichier `Indices.java` à compléter si un nouvel index est nécessaire pour l'exécution d'une requête.
+
+[NOTE]
+====
+Utiliser l'instance de Couchbase et le dataset que vous avez installée avec le document xref:installation.asciidoc["Installation Couchbase"].
+====
+
+== Connexion
+
+Vérifiez que vous pouvez vous connecter en exécutant la classe `Main`. Les noms des collections de mflix-sample devraient s'afficher dans votre console. Si besoin modifier la xref:src/main/java/ch/heig/mac/Main.java#L8[méthode `openConnection`].
+
+== Requêtes
+
+Pour vous aider, le schéma inféré du dataset est disponible dans le xref:mflix_schema.asciidoc[document mflix_schema]. Comme il n’y a pas de schéma imposé aux documents, il est important de vérifier les types inférés pour les champs afin d’assurer la précision des résultats de requêtes.
+
+[IMPORTANT]
+====
+Dans les requêtes utiliser le nom original des champs. Renommer uniquement lorsque c'est indiqué entre parenthèse.
+====
+
+1. ⭐ Implémenter la méthode `inconsistentRating` pour retourner les films (`imdb_id`, `imdb_rating`, `tomatoes_rating`) dont le rating tomatoes n'est pas zéro et dont l'écart entre le rating imdb et tomatoes est plus que 8. Utiliser l'attribut `tomatoes.viewer.rating` comme le rating tomatoes.
+
+2. ⭐ Implementer la méthode `hiddenGem` pour retourner le titre et l'année des films parfaitement notés (10) par les critiques tomatoes mais qui n'ont pas été notés par les viewers tomatoes.
+
+3. ⭐ Implémenter la méthode `topReviewers` pour retourner l'email des 6 personnes ayant fait le plus de commentaires ainsi que le nombre de leurs commentaires (`cnt`). S'il y a égalité, prendre celui dont l'email est le premier dans l'ordre alphabétique.
+
+4. ⭐ Implémenter la méthode `greatReviewers` pour retourner l'email des personnes ayant fait plus de 250 commentaires. Le résultat de la requête doit être une liste de String.
+
+5. ⭐⭐ Implémenter la méthode `bestMoviesOfActor` pour retourner l'identifiant IMDB (`imdb_id`), le rating imdb et le casting des films où le rating IMDB est un numéro plus grand que 9 et dans lequel un acteur donné (par exemple "Al Pacino") joue.
+
+6. ⭐⭐ Expliquer ce que fait la requête suivante:
++
+[source,n1ql]
+----
+SELECT x,
+       ARRAY_LENGTH(y) AS z
+FROM (
+    SELECT x, ARRAY_AGG(m.title) AS y
+    FROM `mflix-sample`.`_default`.`movies` AS m
+    UNNEST m.writers AS x
+    GROUP BY x) AS subq
+WHERE ARRAY_LENGTH(y) > 30;
+----
++
+Donner une nouvelle implémentation sans utiliser `ARRAY_AGG` et `ARRAY_LENGTH` ainsi que l'explication de la requête en commentaire dans la méthode `mystery`.
+
+7. ⭐⭐ Implémenter la méthode `confusingMovies` pour retourner l'id (`movie_id`) et le titre des films qui ont plus de 25 directeurs :
+
+8. ⭐⭐ Voici une requête qui retourne le texte de tous les commentaires sur tous les films (`movie_id`) dirigés par le directeur "Woody Allen".
++
+[source,n1ql]
+----
+SELECT c.movie_id,
+       c.text
+  FROM `mflix-sample`.`_default`.`comments` AS c
+ WHERE c.movie_id IN (
+          SELECT m._id
+            FROM `mflix-sample`.`_default`.`movies` AS m
+           WHERE ANY d IN m.directors SATISFIES d == "Woody Allen" END );
+----
++
+Pourquoi la requête ne retourne rien alors qu'il devrait y avoir des résultats ? Donner votre réponse comme commentaire ainsi qu'une version corrigée dans la méthode `commentsOfDirector1`.
++
+Implémenter dans la méthode `commentsOfDirector2` une autre variante de cette requête pour un directeur donné en utilisant la clause `JOIN` et sans utiliser `ANY .. SATISFIES`.
+
+9. ⭐⭐⭐ Implémenter la méthode `removeEarlyProjection` qui permet de mettre à jour la collection afin de supprimer les projections d'un film donné avant 19h. La méthode retourne le nombre de mise à jour effectuée.
+
+10. ⭐⭐⭐ On souhaite retourner les films qui sont projetés uniquement à partir de 19h.
++
+Ci dessous vous trouvez une implémentation fausse proposée par un LLM, expliquer l'erreur de raisonnement:
++
+[source,n1ql]
+----
+SELECT m._id AS movie_id, 
+       m.title
+  FROM `mflix-sample`.`_default`.`movies` AS m
+  JOIN `mflix-sample`.`_default`.`theaters` AS t
+       ON ANY s IN t.schedule SATISFIES s.movieId = m._id END
+ WHERE
+       -- Toutes les projections de ce film dans tous les théâtres commencent à 19h ou plus tard
+       (
+           ARRAY_MIN(
+               ARRAY s.hourBegin FOR s IN t.schedule WHEN s.movieId = m.   _id END
+           ) >= "19:00:00"
+       )
+       -- Il existe au moins une projection pour ce film
+       AND (
+           ARRAY_LENGTH(
+               ARRAY s FOR s IN t.schedule WHEN s.movieId = m._id END
+           ) > 0
+       )
+ GROUP BY m._id, m.title
+----
++
+[NOTE]
+======
+Pour executer la requête si dessus, il faut créer un index qui permet d'effectuer le JOIN avec un `ANY ... IN ... END`:
+
+[source,n1ql]
+----
+CREATE INDEX adv_DISTINCT_schedule_movieId 
+    ON `default`:`mflix-sample`.`_default`.`theaters`((DISTINCT (ARRAY(`s`.`movieId`) FOR `s` IN `schedule` END)))
+
+----
+======
++
+Implémenter une version correcte et ajouter un commentaire expliquant l'erreur de raisonnement dans la méthode `nightMovies`.

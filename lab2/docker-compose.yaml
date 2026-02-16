@@ -1,0 +1,29 @@
+services:
+  loaddb:
+    image: neo4j:2025.09.0
+    environment:
+      NEO4J_AUTH: none
+    volumes:
+      - "neo4j-data:/data"
+      - "./data:/init"
+    command:
+      - sh 
+      - -c 
+      - |
+        cat /init/contact-tracing-2025.dump | neo4j-admin database load neo4j --from-stdin --overwrite-destination
+
+  graphdb:
+    image: neo4j:2025.09.0
+    environment:
+      NEO4J_AUTH: none
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - "neo4j-data:/data"
+    ports:
+      - 7474:7474
+      - 7687:7687
+    depends_on:
+      loaddb:
+        condition: service_completed_successfully
+volumes:
+  neo4j-data:

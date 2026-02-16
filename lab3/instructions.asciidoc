@@ -1,0 +1,194 @@
+= Indexing and Search with _Elasticsearch_
+Nastaran FATEMI <nastaran.fatemi@heig-vd.ch>; Christopher MEIER <christopher.meier@heig-vd.ch>
+:revdate: 12 November 2025
+:lang: en
+:toc: auto
+:course: Méthodes d’Accès aux Données (MAC)
+:xrefstyle: short
+
+== Introduction
+
+=== Objectives
+
+The goal of this lab is to discover _Elasticsearch_, a distributed RESTful search engine widely used in the industry and based on Apache Lucene (a free and open-source information retrieval software library).
+You will learn how to use various functionalities of _Elasticsearch_ to index and search a collection of scientific publications. 
+
+=== Organization
+
+The lab is to be completed in groups of a maximum of 2 students.
+
+*Deadline*: See the deadline on _Github Classroom_.
+
+*Report*: You are kindly asked to submit a report containing both the answers to the 
+questions and the API requests. In the current document, the report tag highlights the questions we expect you to answer in the report. 
+
+[NOTE,caption=REPORT] 
+==== 
+An example of a report tag. The deliverable is specified with a number *(D.X)*.
+==== 
+
+Please respect the format of the API requests, as shown in the _Elasticsearch_ documentation:
+
+[source,HTTP]
+----
+PUT /cacm_raw/_doc/1
+{
+    "_row": "<id>\t<author 1>;<author 2>\t<title>\t<summary>"
+}
+----
+
+=== Setup
+
+Follow the steps described in the link:./getting_started.asciidoc["Getting started with Elasticsearch"] document.
+
+== Indexing and Searching the CACM Collection
+
+We are now going to use _Elasticsearch_ to index and analyze a list of scientific publications. 
+
+In this lab, you will manually index the publication list, perform a few queries, and answer the questions by running API requests. 
+
+=== Description of the Collection
+
+We will use the famous text corpus, CACM, which you imported in "Getting started with Elasticsearch".
+
+As a reminder, each document in the collection contains:
+
+* the publication id
+* the authors (if any, separated by `;`)
+* the title
+* the date of publication (year and month)
+* the summary (if any)
+
+There might be publications without any author or without the summary field.
+
+=== Indexing
+
+The goal of this part is to explicitly index the CACM publication collection by manually specifying the https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html[mapping].
+
+_Elasticsearch_ provides many field types, most of which can be extensively configured. Take a look at https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html[the documentation].
+
+* Use the ``standard`` analyzer for this part (it's configured by default).
+* Use the appropriate field types. Refer to the https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html#_core_datatypes[common types] and the https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html#text-search-types[text search types]. You will essentially need: https://www.elastic.co/guide/en/elasticsearch/reference/current/number.html[numeric], https://www.elastic.co/guide/en/elasticsearch/reference/current/date.html[date], https://www.elastic.co/guide/en/elasticsearch/reference/current/text.html[text], and https://www.elastic.co/guide/en/elasticsearch/reference/current/keyword.html#keyword-field-type[keyword].
+** Enable queries on author, title, date, and summary attributes.
+** Keep the publication id in the index and show it in the result set of queries, but do not enable queries on this field.
+** Note how _Elasticsearch_ https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html[deals with arrays].
+** For the summary field, store the offsets in the index.
+** In this lab, always activate https://www.elastic.co/guide/en/elasticsearch/reference/current/text.html#fielddata-mapping-param[``fielddata``] for fields of type ``text``.
+
+Do the following steps:
+
+1. Create an index called ``cacm_standard`` which matches the above configuration. Reindex to add the documents of the collection to the index.
+2. Find out what a https://www.elastic.co/guide/en/elasticsearch/reference/current/term-vector.html["term vector"] is in _Elasticsearch_ vocabulary. Create an index called ``cacm_termvector`` which matches the above configuration and allows access to the "term vector" of the ``summary`` field. Reindex. Use the https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-termvectors.html[Term vectors API] to check that the "term vector" is included in the index.
+3. Compare the size on disk of the ``cacm_standard`` and ``cacm_termvector`` indices, and discuss the results.
+
+[NOTE,caption=REPORT] 
+==== 
+Attach the API request for creating the indices (``cacm_standard`` *(D.1)* and ``cacm_termvector`` *(D.2)*).
+
+Attach the API request to check the presence of the term vector *(D.3)*.
+
+Answer the questions (what is a term vector *(D.4)*, size of index with discussion *(D.5)*).
+==== 
+
+=== Reading Index
+
+Use https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html[Terms aggregation] to get information on the ``cacm_standard`` index. Aggregation on a text field requires activating ``fielddata``.
+
+Hint: Setting the global search size to 0 prevents including unwanted ``hits`` in the response. The interesting information is inside the ``aggregations`` field of the response.
+
+Answer the following questions:
+
+1. Who is the author with the highest number of publications? How many publications does he/she have?
+2. List the top 10 terms in the title field together with their frequency.
+
+[NOTE,caption=REPORT] 
+==== 
+Attach the API requests and your answers (author *(D.6)*, titles *(D.7)*).
+==== 
+
+=== Using Different Analyzers
+
+_Elasticsearch_ https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html[provides different analyzers] to process a document. Below, we will test some of these analyzers. Note that here, indexing and searching will use the same analyzer if you https://www.elastic.co/guide/en/elasticsearch/reference/current/specify-analyzer.html[specify it] at index creation. 
+
+Apply the same configuration of the fields as in section <<Indexing>>.
+
+[TIP]
+====
+Remember to create a different index for each analyzer.
+====
+
+1. Index the publication list using each of the following analyzers:
+** ``whitespace``
+** ``english``
+** Custom analyzer based on the ``standard`` analyzer (i.e., lowercase filter and standard tokenizer) but outputs https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-shingle-tokenfilter.html[shingles]footnote:[Shingles are n-grams of words] of size 1 and 2.
+** Custom analyzer based on the ``standard`` analyzer but outputs shingles of size 3 only.
+** ``stop`` with a custom stop list. A list of common words is provided in the file ``common_words.txt`` of the archive. Use this list as stopwordsfootnote:[The data folder containing the file is mounted inside the config folder of _Elasticsearch_].
+2. Reindex and save the response for each, so that you can answer questions later.
+3. Explain the differences between these five analyzers.
+4. Look at the index using Terms aggregation and the https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-stats.html[Index stats API], and for each created index, find out the following information:
+.. The number of indexed documents.
+.. The number of indexed terms in the summary field.
+.. The top 10 frequent terms of the summary field in the index.
+.. The size of the index on disk.
+.. The required time for indexing (e.g., using the ``took`` field from the response to reindex).
+5. Make 3 concluding statements based on the above observations.
+
+[NOTE,caption=REPORT] 
+==== 
+For each analyzer, attach the API request used to create the index *(D.8)*.
+
+Attach your answers (and the queries used to find them) into the report (analyzer differences *(D.9)*, index statistics for each analyzer *(D.10)*, concluding statements *(D.11)*).
+==== 
+
+=== Searching
+
+On the index with the ``english`` analyzer, use https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html[Query string query] to perform the following queries on the ``summary`` field:
+
+1. Publications containing the term "Information Retrieval".
+2. Publications containing both "Information" and "Retrieval".
+3. Publications containing at least the term "Retrieval" and possibly "Information", but not "Database".
+4. Publications containing a term starting with "Info".
+5. Publications containing the term "Information" close to "Retrieval" (max distance 5).
+
+Each query should https://www.elastic.co/guide/en/elasticsearch/reference/current/search-fields.html[only return] the ``id`` field of the matching documents (it should not return the whole document).
+
+[NOTE,caption=REPORT] 
+==== 
+For each query: provide the API request *(D.12)* and the total number of results *(D.13)*.
+==== 
+
+=== Tuning the Score
+
+The goal of this part is to modify the way documents are ranked against a query.
+
+==== Function Score
+
+Compute the query ``compiler program`` with a https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html#function-decay[function score] that calculates the score of documents considering the two following constraints:
+
+* The score of the document reduces linearly as a function of the distance of the publication date from a given reference date, January 1970.
+* The score of a document published 90 days before or after the reference date should be halved.
+
+Here is an example of weighted scores using the function score (considering that all months have 30 days):
+
+[cols="1,1"]
+|===
+|1969-10
+|score x 0.5
+
+|1969-11
+|score x 0.666
+
+|1970-01
+|score x 1
+
+|1970-02
+|score x 0.833
+
+|1970-07
+|score x 0
+|=== 
+
+[NOTE,caption=REPORT] 
+==== 
+Attach the API request to query documents including the function score *(D.14)*.
+==== 

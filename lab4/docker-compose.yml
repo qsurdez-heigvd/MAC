@@ -1,0 +1,15 @@
+services:
+  zeppelin:
+    image: ghcr.io/heigvd-202509-mac-ab/zeppelin:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080  # Zeppelin UI
+      - 4040:4040  # Spark UI
+    environment:
+      ZEPPELIN_LOG_DIR: /repo/logs
+      ZEPPELIN_NOTEBOOK_DIR: /repo
+    volumes:
+      - ".:/repo"
+

@@ -1,0 +1,23 @@
+services:
+  couchbase-server:
+    image: ghcr.io/heigvd-202509-mac-ab/couchbase:latest
+    build:
+      dockerfile: Dockerfile
+      context: docker
+    volumes:
+      - couchbase-data:/opt/couchbase/var
+    #environment:
+    #  - INIT_CLUSTER=true
+    #  - COUCHBASE_ADMINISTRATOR_USERNAME=Administrator
+    #  - COUCHBASE_ADMINISTRATOR_PASSWORD=mac2025
+    #  - COUCHBASE_CLUSTER_NAME=MAC
+    ports:
+      - "8091-8096:8091-8096"
+      - "11210:11210"
+    ulimits:
+      nofile:
+        soft: "200000"
+        hard: "200000"
+
+volumes:
+  couchbase-data:

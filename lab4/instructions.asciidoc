@@ -1,0 +1,45 @@
+= Big Data with Spark and Zeppelin
+Nastaran FATEMI <nastaran.fatemi@heig-vd.ch>; Christopher MEIER <christopher.meier@heig-vd.ch>
+
+== Introduction
+
+=== Objective
+
+The objective of this lab is to practice writting Spark code using Apache Zeppelin. 
+
+Apache Zeppelin is a web application that provides interactive notebooks for working with Spark, similar to Jupyter/iPython. Zeppelin is particularly suited for interactively exploring data and incrementally developing Spark programs.
+
+=== Organization
+
+The lab is realized in groups of maximum 2 students.
+
+*Deadline*: See deadline on _Github Classroom_.
+
+=== Setup
+
+Installing Zeppelin on your local machine is simple, as it comes in a prepackaged Docker container. The container already includes Scala and Spark, plus other interpreters, such as Python.
+
+Prerequisites:
+
+* Docker - If you don't have Docker, install Docker Desktop
+* 3.5 GB free disk space
+
+To install Zeppelin on your local machine proceed as follows:
+
+. Launch the docker compose file ``docker-compose.yml`` with ``docker compose up``. When you launch it for the first time, Docker downloads the container image, which takes some time.
+. Point your browser to http://localhost:8080/. You should see a page titled *Welcome to Zeppelin!*.
+. To stop the Zeppelin container, type Ctrl+C (or ``docker compose down``). To remove the Zeppelin container image from disk and regain 1.8 GB disk space, run ``docker compose down --rmi local``.
+
+=== Access the Spark UI
+
+The Spark UI is accessible at http://localhost:4040.
+
+If you want the `SPARK JOB` links present in a notebook to work, you need to go to the http://localhost:8080/#/interpreter[interpreter configuration page], edit the spark interpreter and set `zeppelin.spark.uiWebUrl` to `http://localhost:4040`.
+
+=== Getting started
+
+Read and execute the notebook at ``notebooks/getting_started``.
+
+== Exercices
+
+Complete and execute the exercices in the notebook at ``notebooks/spark_RDDs``.
